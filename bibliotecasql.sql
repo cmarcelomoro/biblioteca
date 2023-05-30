@@ -7,10 +7,10 @@ CREATE TABLE pessoa (
     );
 
 
-CREATE TABLE livros (
+CREATE TABLE livro (
   id INT primary key auto_increment,
-  nomeLivro VARCHAR(100),
-  nomeAutor VARCHAR(100),
+  titulo VARCHAR(100),
+  autor VARCHAR(100),
   ano INT,
   numPaginas INT,
   genero VARCHAR(50),
@@ -25,6 +25,6 @@ create table doacao (
     foreign key(fk_pessoa)
     references pessoa (id),
     foreign key(fk_livro)
-    references livros (id)
+    references livro (id)
     );
     
