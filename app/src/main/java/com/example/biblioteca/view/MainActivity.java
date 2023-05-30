@@ -54,13 +54,17 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(String response) {
                             String respostaCortada = response.substring(0);
-                            String [] id = respostaCortada.split("_");
-                            System.out.println(id);
+
+                            String [] respostaSplitada = response.split("_");
+
+
+                            System.out.println(respostaSplitada[1]);
+                            Constantes.id = respostaSplitada[1];
+
 
                             String resposta = response.substring(0).trim();
                             //testa o valor da resposta obtida do servidor
-                            Toast.makeText(MainActivity.this, resposta, Toast.LENGTH_SHORT).show();
-                            if (resposta.equals("logado")) {
+                            if (resposta.contains("logado")) {
                                 System.out.println("Você logou");
                                 startActivity(itHome);
 
