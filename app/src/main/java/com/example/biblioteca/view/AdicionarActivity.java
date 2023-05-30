@@ -48,72 +48,21 @@ public class AdicionarActivity extends AppCompatActivity {
     }
 
     public void botaoConfirmar(View v){
-        String nomeLivro = editTextNomeLivro.getText().toString();
-        String nomeAutor = editTextAutor.getText().toString();
+        String titulo = editTextNomeLivro.getText().toString();
+        String autor = editTextAutor.getText().toString();
         String ano = editTextAno.getText().toString();
         String genero = editTextGenero.getText().toString();
         String numPaginas = editTextNumPaginas.getText().toString();
         String classificacao = editTextClassificacao.getText().toString();
 
 
-        if(nomeLivro.isEmpty() || nomeAutor.isEmpty()  ||
+        if(titulo.isEmpty() || autor.isEmpty()  ||
         ano.isEmpty() || genero.isEmpty() ||
                 numPaginas.isEmpty() || classificacao.isEmpty()){
             System.out.println("Está faltando algum dado.");
         }else{
-            System.out.println("Dados Ok");
-            RequestQueue fila = Volley.newRequestQueue(this);
-            String url = "http://"+Constantes.ip+"/bibliotecascripts/inserirlivro.php";
-            StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
-                    new Response.Listener<String>() {
-                        @Override
-                        public void onResponse(String response) {
 
-                            String resposta = response.substring(0).trim();
-                            Toast.makeText(AdicionarActivity.this, resposta, Toast.LENGTH_SHORT).show();
-                            System.out.println(resposta);
-                            //testa o valor da resposta obtida do servidor
-                            if (resposta.equals("pesquisa_foi")) {
-
-                                System.out.println("pesquisa foi");
-                                //finish();
-                            } else if (resposta.equals("erro_ao_inserir")) {
-                                System.out.println("Houve um erro de inserção.");
-                            } else if (resposta.equals("erro_post")){
-                                System.out.println("Houve um erro no POST.");
-                            } else if (resposta.equals("pesquisa_n_foi")){
-                                System.out.println("pesquisa nao foi");
-                            }else if(resposta.equals("dados_recebidos_post")){
-                                System.out.println("Dados recebidos");
-                            }else if(resposta.equals("resposta")){
-                                System.out.println("Resposta");
-                            }
-
-                        }
-                    },
-                    new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            System.out.println(error);
-                            System.out.println("Erro de comunicação");
-                        }
-                    }) {
-                @Override
-                protected Map<String, String> getParams() {
-                    Map<String, String> params = new HashMap<>();
-                    params.put("titulo", nomeLivro);
-                    params.put("autor", nomeAutor);
-                    params.put("ano",ano);
-                    params.put("numPaginas",numPaginas);
-                    params.put("genero",genero);
-                    params.put("classificacao",classificacao);
-                    params.put("meuId",Constantes.id);
-                    return params;
-                }
-
-            };
-
-            fila.add(stringRequest);
+            LivroController livro = new LivroController(titulo,autor,ano,genero,numPaginas,classificacao);
 
         }
 
