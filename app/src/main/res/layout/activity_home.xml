@@ -39,7 +39,12 @@
 
             ></Button>
 
-
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="35dp"
+            android:onClick="listarLivros"
+            android:text="Buscar Livro"></Button>
     </LinearLayout>
 
 
