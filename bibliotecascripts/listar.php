@@ -1,9 +1,7 @@
 <?php
-
-include("conexao.php");
-
-
+header("Content-Type: application/json; charset=UTF-8");
 function criaJSON($sql){
+    include("conexao.php");
     $resultado = $conexao->query($sql);
     if($resultado->num_rows > 0){
         $rows = array();
@@ -22,14 +20,11 @@ function criaJSON($sql){
        echo $json_com_quebra_de_linha;
 
     }
+    
 }
-
-$sql = "SELECT * from livros";
-
-
-
-criaJSON(sql);
-
-
-
+$sql = "SELECT * from livro";
+criaJSON($sql);
+/*$resposta = ['livros' => array()];
+$jsonResultado = json_encode($resposta);
+print($jsonResultado);*/
 ?>

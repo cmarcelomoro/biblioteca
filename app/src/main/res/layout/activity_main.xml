@@ -31,7 +31,7 @@
             android:id="@+id/editTextNome"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            ></EditText>
+            android:text="teste"></EditText>
 
         <TextView
             android:id="@+id/textViewSenha"
@@ -47,7 +47,7 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            >
+            android:text="123456789">
 
         </EditText>
 

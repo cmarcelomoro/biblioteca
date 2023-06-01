@@ -1,9 +1,8 @@
 <?php
-
 	//conexão com o mysql
-	$ip = "192.168.0.107";
+	$ip = "localhost";
 	$usuario = "root";
-	$senha = "Hellfire777@";
+	$senha = "laboratorio";
 	
 	$conexao = new mysqli($ip, $usuario, $senha);
 	
