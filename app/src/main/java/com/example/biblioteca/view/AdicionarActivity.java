@@ -72,20 +72,15 @@ public class AdicionarActivity extends AppCompatActivity {
 
                             System.out.println(resposta);
                             //testa o valor da resposta obtida do servidor
-                            if (resposta.equals("pesquisa_foi")) {
+                            if (resposta.equals("livro_inserido")) {
 
-                                System.out.println("pesquisa foi");
-                                //finish();
+                                System.out.println("O livro foi inserido!");
+                                Toast.makeText(AdicionarActivity.this, "Livro inserido", Toast.LENGTH_SHORT).show();
                             } else if (resposta.equals("erro_ao_inserir")) {
                                 System.out.println("Houve um erro de inserção.");
+                                Toast.makeText(AdicionarActivity.this, "Houve um erro na inserção", Toast.LENGTH_SHORT).show();
                             } else if (resposta.equals("erro_post")){
                                 System.out.println("Houve um erro no POST.");
-                            } else if (resposta.equals("pesquisa_n_foi")){
-                                System.out.println("pesquisa nao foi");
-                            }else if(resposta.equals("dados_recebidos_post")){
-                                System.out.println("Dados recebidos");
-                            }else if(resposta.equals("resposta")){
-                                System.out.println("Resposta");
                             }
 
                         }

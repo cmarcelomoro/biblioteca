@@ -26,6 +26,8 @@
         <activity android:name=".view.CadastroActivity"></activity>
         <activity android:name=".view.HomeActivity"></activity>
         <activity android:name=".view.AdicionarActivity"></activity>
+        <activity android:name=".view.ResultadoBusca"></activity>
+        <activity android:name=".view.MeusLivros"></activity>
     </application>
 
 </manifest>

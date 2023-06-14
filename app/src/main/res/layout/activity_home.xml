@@ -25,10 +25,12 @@
             android:textSize="30dp" />
 
         <Button
+            android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Escolher um livro"
-            android:textSize="20dp"></Button>
+            android:text="Meus livros"
+            android:textSize="20dp"
+            android:onClick="botaoMeusLivros"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -38,13 +40,24 @@
             android:textSize="20dp"
 
             ></Button>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
 
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:id="@+id/editTextTituloBusca"></EditText>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="35dp"
-            android:onClick="listarLivros"
+            android:textSize="20dp"
+            android:onClick="buscarLivro"
             android:text="Buscar Livro"></Button>
+         </LinearLayout>
     </LinearLayout>
 
 
